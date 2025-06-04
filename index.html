@@ -23,6 +23,10 @@
     <h3>Resultado:</h3>
     <p id="resultado"></p>
 
+    <h3>Calculando a soma dos termos:</h3>
+    <button onclick="calcularSomaPA()">Calcular Soma dos Termos</button>
+    <p id="somaPA"></p>
+    
     <script>
         function gerarPA() {
             const primeiro = parseInt(document.getElementById("primeiro").value);
@@ -38,6 +42,17 @@
 
             document.getElementById("resultado").innerText = resultado;
         }
+
+        function calcularSomaPA() {
+            const primeiro = parseInt(document.getElementById("primeiro").value);
+            const razao = parseInt(document.getElementById("razao").value);
+            const quantidade = parseInt(document.getElementById("quantidade").value);
+
+            // Fórmula da soma dos n primeiros termos da PA: S = n/2 * (2a1 + (n-1)r)
+            const soma = quantidade / 2 * (2 * primeiro + (quantidade - 1) * razao);
+
+            document.getElementById("somaPA").innerHTML = "<strong style='color: #000;'>Soma dos termos:</strong> " + soma;
+        }      
     </script>
 </body>
 
